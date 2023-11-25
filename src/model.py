@@ -1,6 +1,7 @@
 import numpy as np
 from tqdm import tqdm
 from gen_contact_tensors import gen_contact_tensors
+from copy import deepcopy
 
 class model:
     def __init__(self, path, R, timestep, l = 1, eps = 1e-15, showNormsHistory = True):
@@ -18,13 +19,39 @@ class model:
         self.S = self._calculS()
         self.norml0 = self._costFunction()
         self.normUV = np.linalg.norm(self.U - self.V)**2
-        self.listNorml0 = np.array([self.norml0])
-        self.listNormUV = np.array([self.normUV])
+        self.listNorml0 = np.array([])
+        self.listNormUV = np.array([])
+
+        for k in range(len(self.U[0])):
+            denom = np.linalg.norm(self.U[:, k])
+            if denom == 0:
+                denom = 1
+            self.U[:, k] = self.U[:, k]/denom
+                
+        for k in range(len(self.V[0])):
+            denom = np.linalg.norm(self.V[:, k])
+            if denom == 0:
+                denom = 1
+            self.V[:, k] = self.V[:, k]/denom
+
+        for k in range(len(self.W[0])):
+            denom = np.linalg.norm(self.W[:, k])
+            if denom == 0:
+                denom = 1
+            self.W[:, k] = self.W[:, k]/denom
 
     def _calculS(self):
         S = np.zeros((self.K, self.I, self.I))
         for r in range(self.R):
             S += self.U[:, r].reshape(1, self.I, 1) * self.V[:, r].reshape(1, 1, self.I) * self.W[:, r].reshape(self.K, 1, 1)
+        return S
+
+    def _calculS2D(self, U, V, r1 = None):
+        S = np.zeros((len(U), len(V)))
+        for r in range(self.R):
+            S += U[:, r].reshape(-1, 1) @ V[:, r].reshape(1, -1)
+        if r1 != None:
+            S -= U[:, r1].reshape(-1, 1) @ V[:, r1].reshape(1, -1)
         return S
 
     @staticmethod
@@ -46,7 +73,7 @@ class model:
         '''
         Horizontal stacking of transposed frontal slices
         '''
-        return np.vstack(T).transpose()
+        return np.vstack(T).T
 
     @staticmethod
     def _mode3Unfolding(T):
@@ -59,32 +86,32 @@ class model:
         return np.linalg.norm(self.Y - self.S)**2 + self.l * np.linalg.norm(self.U - self.V)**2
 
     def _gradU(self):
-        B = self._KhatriRao(self.W, self.V).transpose()
-        positivePart = 2*(self.U @ B @ B.transpose() + self.l * self.U)
-        negativePart = np.maximum(2 * (self._mode1Unfolding(self.Y) @ B.transpose() + self.l * self.V), self.eps)
+        B = self._KhatriRao(self.W, self.V).T
+        positivePart = 2*(self.U @ B @ B.T + self.l * self.U)
+        negativePart = np.maximum(2 * (self._mode1Unfolding(self.Y) @ B.T + self.l * self.V), self.eps)
         return positivePart, negativePart
 
     def _gradV(self):
-        B = self._KhatriRao(self.W, self.U).transpose()
-        positivePart = 2*(self.V @ B @ B.transpose() + self.l * self.V)
-        negativePart = np.maximum(2 * (self._mode2Unfolding(self.Y) @ B.transpose() + self.l * self.U), self.eps)
+        B = self._KhatriRao(self.W, self.U).T
+        positivePart = 2*(self.V @ B @ B.T + self.l * self.V)
+        negativePart = np.maximum(2 * (self._mode2Unfolding(self.Y) @ B.T + self.l * self.U), self.eps)
         return positivePart, negativePart
 
     def _gradW(self):
-        B = self._KhatriRao(self.V, self.U).transpose()
-        positivePart = 2 * self.W @ B @ B.transpose()
-        negativePart = np.maximum(2 * self._mode3Unfolding(self.Y) @ B.transpose(), self.eps)
+        B = self._KhatriRao(self.V, self.U).T
+        positivePart = 2 * self.W @ B @ B.T
+        negativePart = np.maximum(2 * self._mode3Unfolding(self.Y) @ B.T, self.eps)
         return positivePart, negativePart
 
-    def _iteration(self, A, gradX):
+    def _iterationMU(self, A, gradX):
         positivePart, negativePart = gradX() 
         return A * (negativePart / positivePart)
 
     def MU(self, nbIterations):
         for k in tqdm(range(nbIterations)):
-            self.U = self._iteration(self.U, self._gradU)
-            self.V = self._iteration(self.V, self._gradV)
-            self.W = self._iteration(self.W, self._gradW)
+            self.U = self._iterationMU(self.U, self._gradU)
+            self.V = self._iterationMU(self.V, self._gradV)
+            self.W = self._iterationMU(self.W, self._gradW)
             if self.showNormsHistory:
                 self.S = self._calculS()
                 self.listNorml0 = np.append(self.listNorml0, self._costFunction())
@@ -92,3 +119,27 @@ class model:
         self.S = self._calculS()
         self.norml0 = self._costFunction()
         self.normUV = np.linalg.norm(self.U - self.V)**2
+
+    def HALS(self, nbIterations):
+        for k in tqdm(range(nbIterations)):
+            for r in range(self.R):
+                hU = self._KhatriRao(self.W, self.V) 
+                Yr = self._mode1Unfolding(self.Y) - self._calculS2D(self.U, hU, r)
+                self.U[:, r] = np.maximum((1/(np.linalg.norm(hU[:, r])**2)) * Yr @ hU[:, r], 0)
+            
+                hV = self._KhatriRao(self.W, self.U)
+                Yr = self._mode2Unfolding(self.Y) - self._calculS2D(self.V, hV, r)
+                self.V[:, r] = np.maximum((1/(np.linalg.norm(hV[:, r])**2)) * Yr @ hV[:, r], 0)
+            
+                hW = self._KhatriRao(self.V, self.U)
+                Yr = self._mode3Unfolding(self.Y) - self._calculS2D(self.W, hW, r)
+                self.W[:, r] = np.maximum((1/(np.linalg.norm(hW[:, r])**2)) * Yr @ hW[:, r], 0)
+            
+            if self.showNormsHistory:
+                self.S = self._calculS()
+                self.listNorml0 = np.append(self.listNorml0, self._costFunction())
+                self.listNormUV = np.append(self.listNormUV, np.linalg.norm(self.U - self.V)**2)
+
+        self.S = self._calculS()
+        self.norml0 = self._costFunction()
+        self.normUV = np.linalg.norm(self.U - self.V)**2    
