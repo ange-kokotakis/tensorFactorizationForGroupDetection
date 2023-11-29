@@ -1,7 +1,6 @@
 import numpy as np
 from tqdm import tqdm
 from gen_contact_tensors import gen_contact_tensors
-from copy import deepcopy
 
 class model:
     def __init__(self, path, R, timestep, l = 1, eps = 1e-15, showNormsHistory = True):
@@ -21,24 +20,16 @@ class model:
         self.normUV = np.linalg.norm(self.U - self.V)**2
         self.listNorml0 = np.array([])
         self.listNormUV = np.array([])
+        
+        #Normalization of each column of U, V, W
+        normsU = np.linalg.norm(self.U, axis = 0)
+        self.U /= normsU
+        
+        normsV = np.linalg.norm(self.V, axis = 0)
+        self.V/= normsV
 
-        for k in range(len(self.U[0])):
-            denom = np.linalg.norm(self.U[:, k])
-            if denom == 0:
-                denom = 1
-            self.U[:, k] = self.U[:, k]/denom
-                
-        for k in range(len(self.V[0])):
-            denom = np.linalg.norm(self.V[:, k])
-            if denom == 0:
-                denom = 1
-            self.V[:, k] = self.V[:, k]/denom
-
-        for k in range(len(self.W[0])):
-            denom = np.linalg.norm(self.W[:, k])
-            if denom == 0:
-                denom = 1
-            self.W[:, k] = self.W[:, k]/denom
+        normsW = np.linalg.norm(self.W, axis = 0)
+        self.W /= normsW
 
     def _calculS(self):
         S = np.zeros((self.K, self.I, self.I))
@@ -125,15 +116,15 @@ class model:
             for r in range(self.R):
                 hU = self._KhatriRao(self.W, self.V) 
                 Yr = self._mode1Unfolding(self.Y) - self._calculS2D(self.U, hU, r)
-                self.U[:, r] = np.maximum((1/(np.linalg.norm(hU[:, r])**2)) * Yr @ hU[:, r], 0)
+                self.U[:, r] = np.maximum((1/(self.l + np.linalg.norm(hU[:, r])**2)) *(self.l *self.V[:, r] + Yr @ hU[:, r]), 0)
             
                 hV = self._KhatriRao(self.W, self.U)
                 Yr = self._mode2Unfolding(self.Y) - self._calculS2D(self.V, hV, r)
-                self.V[:, r] = np.maximum((1/(np.linalg.norm(hV[:, r])**2)) * Yr @ hV[:, r], 0)
+                self.V[:, r] = np.maximum((1/(self.l + np.linalg.norm(hV[:, r])**2)) *(self.l *self.U[:, r] +Yr @ hV[:, r]), 0)
             
                 hW = self._KhatriRao(self.V, self.U)
                 Yr = self._mode3Unfolding(self.Y) - self._calculS2D(self.W, hW, r)
-                self.W[:, r] = np.maximum((1/(np.linalg.norm(hW[:, r])**2)) * Yr @ hW[:, r], 0)
+                self.W[:, r] = np.maximum((1/(self.l + np.linalg.norm(hW[:, r])**2)) * Yr @ hW[:, r], 0)
             
             if self.showNormsHistory:
                 self.S = self._calculS()
