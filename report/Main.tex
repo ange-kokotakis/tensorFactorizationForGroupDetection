@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{listings} % to write code 
+\usepackage{mathabx} % \boxslash
+
+
+\title{Tensor Factorisation for Group Detection}
+\author{ Ange Kokotakis, Romain Ramez \\ \small directed by Rodrigo Cabral Farias}
+\date{November 2023}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    The aim of this project is to detect groups of people with a given dataset of interactions in a community.
+    For this purpose we will represent the dataset as a tensor and use non-negative tensor factorization to approximate
+    it as a product of different matrix from which we can get information about groups in this community.
+\end{abstract}
+
+\section{Introduction}
+
+In this project, we use datasets similar to Figure \ref{dataset} in which each line represents an interaction between
+two individuals: $id1$ and $id2$ at a certain $time$.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.3\textwidth]{images/tableau_données.png}
+    \caption{dataset}
+    \label{dataset}
+\end{figure}
+
+From this dataset we create matrices $X \in \{0, 1\}^{I \times I}$ which represent interactions between people during a certain
+interval of time where $I$ is equal to the number of people in the community and each coefficient is equal to :
+
+\[
+    X_{i,j} = 
+    \begin{cases}
+        1 & \text{if there is an interaction between person $i$ and $j$ during a given interval of time} \\
+        0 & \text{otherwise}
+    \end{cases}
+\]
+
+And then we stack these matrices with different interval $t_k$ of time to create our tensor $Y \in \{0, 1\}^{I \times I \times K}$
+where K is the number of intervals of time. Finally the tensor containing the dataset has its coefficients equal to :
+
+\[
+    Y_{i,j,k} = 
+    \begin{cases}
+        1 & \text{if there is an interaction between person $i$ and $j$ at interval of time $t_k$} \\
+        0 & \text{otherwise}
+    \end{cases}
+\]
+
+\section{Model}
+
+In order to approximate this tensor we create 3 matrices :
+\[
+    U \in \mathbb{R}_+^{I \times R}, \,
+    V \in \mathbb{R}_+^{I \times R}, \,
+    W \in \mathbb{R}_+^{K \times R}
+\]
+
+where :
+\begin{itemize}
+    \item[]
+    \begin{itemize}
+        \item $I$ is the number of individuals in the community,
+        \item $K$ is the number of interval of time,
+        \item $R$ is the number of groups in the community (we choose one randomly at first we will see later how to choose it correctly).
+    \end{itemize}
+\end{itemize}
+
+The $U$ and $V$ matrices represent the membership level of a person to a certain group
+and $W$ represents in which interval of time a group has been active.
+
+% \[
+%     L(U, V, W)=\|Y-[U, V, W]\|_{F}^2 +\lambda \|U-V\|_{F}^2
+% \]
+
+%\section{Multiplication Update Algorithm (MU)}
+
+% \begin{lstlisting}[language=Python]
+    % code
+% \end{lstlisting}
+
+We define $S \in \mathbb{R}_+^{I \times I \times K}$
+
+\end{document}
+%mettre en gras les matrices en gras voir mathbf
