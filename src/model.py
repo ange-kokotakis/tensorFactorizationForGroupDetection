@@ -1,6 +1,6 @@
 import numpy as np
 from tqdm import tqdm
-from gentest import gen_contact_tensors
+from gen_contact_tensors import gen_contact_tensors
 
 class model:
     def __init__(self, path, R, timestep, l = 1, eps = 1e-15, showNormsHistory = True):
