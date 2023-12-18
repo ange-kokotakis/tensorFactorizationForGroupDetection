@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.26)  18 DEC 2023 03:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.26)  18 DEC 2023 14:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -284,40 +284,47 @@ LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 907.
 LaTeX Font Info:    Redeclaring math symbol \braceru on input line 909.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 944.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 946.
-)) (c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+)) (c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count286
+\float@exts=\toks24
+\float@box=\box55
+\@float@everytoks=\toks25
+\@floatcapt=\box56
+) (c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count286
-\l__pdf_internal_box=\box55
+\l__color_backend_stack_int=\count287
+\l__pdf_internal_box=\box57
 ) (./Main.aux)
 \openout1 = `Main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
  (c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count287
+\scratchcounter=\count288
 \scratchdimen=\dimen165
-\scratchbox=\box56
-\nofMPsegments=\count288
-\nofMParguments=\count289
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count290
+\scratchbox=\box58
+\nofMPsegments=\count289
+\nofMParguments=\count290
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count291
 \MPscratchDim=\dimen166
-\MPnumerator=\count291
-\makeMPintoPDFobject=\count292
-\everyMPtoPDFconversion=\toks25
+\MPnumerator=\count292
+\makeMPintoPDFobject=\count293
+\everyMPtoPDFconversion=\toks27
 ) (c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -358,21 +365,21 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Command `\dddot' is already robust on input line 14.
-LaTeX Info: Command `\ddddot' is already robust on input line 14.
-\c@lstlisting=\count293
-LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
+LaTeX Info: Command `\dddot' is already robust on input line 15.
+LaTeX Info: Command `\ddddot' is already robust on input line 15.
+\c@lstlisting=\count294
+LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
 (c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
  (c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <images/tableau_données.png, id=1, 154.77824pt x 244.5135pt>
 File: images/tableau_données.png Graphic file (type png)
 <use images/tableau_données.png>
-Package pdftex.def Info: images/tableau_données.png  used on input line 31.
+Package pdftex.def Info: images/tableau_données.png  used on input line 32.
 (pdftex.def)             Requested size: 140.92793pt x 222.6494pt.
  [1
 
@@ -380,160 +387,185 @@ Package pdftex.def Info: images/tableau_données.png  used on input line 31.
 <images/outer_product.png, id=21, 876.876pt x 422.7795pt>
 File: images/outer_product.png Graphic file (type png)
 <use images/outer_product.png>
-Package pdftex.def Info: images/outer_product.png  used on input line 100.
+Package pdftex.def Info: images/outer_product.png  used on input line 101.
 (pdftex.def)             Requested size: 234.8775pt x 113.24239pt.
  [2 <./images/outer_product.png>]
-Overfull \hbox (50.77092pt too wide) detected at line 169
+Overfull \hbox (50.77092pt too wide) detected at line 170
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
 
  []
 
 <images/comparison_HALS_MU.png, id=28, 427.5975pt x 311.36325pt>
 File: images/comparison_HALS_MU.png Graphic file (type png)
 <use images/comparison_HALS_MU.png>
-Package pdftex.def Info: images/comparison_HALS_MU.png  used on input line 182.
+Package pdftex.def Info: images/comparison_HALS_MU.png  used on input line 183.
 (pdftex.def)             Requested size: 234.8775pt x 171.02701pt.
+[3]
+<images/original_class.png, id=38, 416.757pt x 302.93175pt>
+File: images/original_class.png Graphic file (type png)
+<use images/original_class.png>
+Package pdftex.def Info: images/original_class.png  used on input line 197.
+(pdftex.def)             Requested size: 234.8775pt x 170.72687pt.
+<images/naive_approach_r=11_t=18000.png, id=39, 417.35925pt x 305.34074pt>
+File: images/naive_approach_r=11_t=18000.png Graphic file (type png)
+<use images/naive_approach_r=11_t=18000.png>
+Package pdftex.def Info: images/naive_approach_r=11_t=18000.png  used on input line 207.
+(pdftex.def)             Requested size: 234.8775pt x 171.84227pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--192
+Underfull \hbox (badness 10000) in paragraph at lines 211--215
 
  []
 
-<images/MU50_R10_t3600.png, id=29, 462.528pt x 346.896pt>
+[4 <./images/comparison_HALS_MU.png> <./images/original_class.png>]
+<images/3cases_of_convergence.png, id=45, 1062.97125pt x 250.536pt>
+File: images/3cases_of_convergence.png Graphic file (type png)
+<use images/3cases_of_convergence.png>
+Package pdftex.def Info: images/3cases_of_convergence.png  used on input line 223.
+(pdftex.def)             Requested size: 469.75502pt x 110.72166pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
+
+ []
+
+<images/MU50_R10_t3600.png, id=46, 462.528pt x 346.896pt>
 File: images/MU50_R10_t3600.png Graphic file (type png)
 <use images/MU50_R10_t3600.png>
-Package pdftex.def Info: images/MU50_R10_t3600.png  used on input line 195.
+Package pdftex.def Info: images/MU50_R10_t3600.png  used on input line 257.
 (pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/MU150_R10_t3600.png, id=30, 462.528pt x 346.896pt>
+<images/MU150_R10_t3600.png, id=47, 462.528pt x 346.896pt>
 File: images/MU150_R10_t3600.png Graphic file (type png)
 <use images/MU150_R10_t3600.png>
-Package pdftex.def Info: images/MU150_R10_t3600.png  used on input line 201.
+Package pdftex.def Info: images/MU150_R10_t3600.png  used on input line 263.
 (pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/MU500_R10_t3600.png, id=31, 462.528pt x 346.896pt>
+<images/MU500_R10_t3600.png, id=48, 462.528pt x 346.896pt>
 File: images/MU500_R10_t3600.png Graphic file (type png)
 <use images/MU500_R10_t3600.png>
-Package pdftex.def Info: images/MU500_R10_t3600.png  used on input line 207.
+Package pdftex.def Info: images/MU500_R10_t3600.png  used on input line 269.
 (pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
-<images/MU500_R5_t3600.png, id=41, 462.528pt x 346.896pt>
+[5 <./images/naive_approach_r=11_t=18000.png> <./images/3cases_of_convergence.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+
+ []
+
+<images/MU500_R5_t3600.png, id=54, 462.528pt x 346.896pt>
 File: images/MU500_R5_t3600.png Graphic file (type png)
 <use images/MU500_R5_t3600.png>
-Package pdftex.def Info: images/MU500_R5_t3600.png  used on input line 223.
+Package pdftex.def Info: images/MU500_R5_t3600.png  used on input line 285.
 (pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: images/MU500_R10_t3600.png Graphic file (type png)
 <use images/MU500_R10_t3600.png>
-Package pdftex.def Info: images/MU500_R10_t3600.png  used on input line 229.
+Package pdftex.def Info: images/MU500_R10_t3600.png  used on input line 291.
 (pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/MU500_R15_t3600.png, id=42, 462.528pt x 346.896pt>
+<images/MU500_R15_t3600.png, id=55, 462.528pt x 346.896pt>
 File: images/MU500_R15_t3600.png Graphic file (type png)
 <use images/MU500_R15_t3600.png>
-Package pdftex.def Info: images/MU500_R15_t3600.png  used on input line 235.
+Package pdftex.def Info: images/MU500_R15_t3600.png  used on input line 297.
 (pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
  []
 
-[4 <./images/comparison_HALS_MU.png> <./images/MU50_R10_t3600.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
+
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
-<images/MU500_R10_t900.png, id=48, 462.528pt x 346.896pt>
+[6 <./images/MU50_R10_t3600.png> <./images/MU150_R10_t3600.png>]
+<images/MU500_R10_t900.png, id=61, 462.528pt x 346.896pt>
 File: images/MU500_R10_t900.png Graphic file (type png)
 <use images/MU500_R10_t900.png>
-Package pdftex.def Info: images/MU500_R10_t900.png  used on input line 251.
+Package pdftex.def Info: images/MU500_R10_t900.png  used on input line 313.
 (pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: images/MU500_R10_t3600.png Graphic file (type png)
 <use images/MU500_R10_t3600.png>
-Package pdftex.def Info: images/MU500_R10_t3600.png  used on input line 258.
+Package pdftex.def Info: images/MU500_R10_t3600.png  used on input line 320.
 (pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/MU500_R10_t18000.png, id=49, 462.528pt x 346.896pt>
+<images/MU500_R10_t18000.png, id=62, 462.528pt x 346.896pt>
 File: images/MU500_R10_t18000.png Graphic file (type png)
 <use images/MU500_R10_t18000.png>
-Package pdftex.def Info: images/MU500_R10_t18000.png  used on input line 265.
+Package pdftex.def Info: images/MU500_R10_t18000.png  used on input line 327.
 (pdftex.def)             Requested size: 234.8775pt x 176.15768pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--271
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
-[5 <./images/MU150_R10_t3600.png> <./images/MU500_R10_t3600.png>] [6 <./images/MU500_R5_t3600.png> <./images/MU500_R15_t3600.png>] [7 <./images/MU500_R10_t900.png> <./images/MU500_R10_t18000.png>] (./Main.aux) ) 
+[7 <./images/MU500_R10_t3600.png> <./images/MU500_R5_t3600.png>] [8 <./images/MU500_R15_t3600.png> <./images/MU500_R10_t900.png>] [9 <./images/MU500_R10_t18000.png>] (./Main.aux) ) 
 Here is how much of TeX's memory you used:
- 5113 strings out of 476001
- 75341 string characters out of 5780722
- 1868068 words of memory out of 5000000
- 25533 multiletter control sequences out of 15000+600000
- 527348 words of font info for 84 fonts, out of 8000000 for 9000
+ 5207 strings out of 476001
+ 77322 string characters out of 5780722
+ 1865068 words of memory out of 5000000
+ 25620 multiletter control sequences out of 15000+600000
+ 527655 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,13n,62p,450b,261s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha5.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Main.pdf (7 pages, 463279 bytes).
+Output written on Main.pdf (9 pages, 752080 bytes).
 PDF statistics:
- 149 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 161 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

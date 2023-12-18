@@ -5,6 +5,7 @@
 \usepackage{amsfonts}
 \usepackage{listings} % to write code 
 \usepackage{mathabx} % \boxslash
+\usepackage{float}
 
 
 \title{Tensor Factorisation for Group Detection}
@@ -175,9 +176,9 @@ At each iteration we update $\mathbf{U}_{r'}$, $\mathbf{V}_{r'}$, $\mathbf{W}_{r
 
 \section{Comparison of MU and HALS convergence}
 
-We note that HALS converge faster than MU.
+We note that HALS converge fa   ster than MU.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/comparison_HALS_MU.png}
     \caption{comparison between MU and HALS convergence}
@@ -185,7 +186,68 @@ We note that HALS converge faster than MU.
 
 
 
-\section{Result}
+\section{Interpretation of our results}
+
+In this section we use a database composed of interaction between students and teachers in a school during 2 days, this databse furnished
+metadata which indicate in which class students are. We represent it as the scheme below where two people in the same class have the same color, teachers ar in black,
+the distance between two individuals is randomly chosen and have no meaning in this representation :
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/original_class.png}
+    \caption{original classes}
+\end{figure}
+
+\subsection{A first approximation}
+Using $\mathbf{U}$ (and $\mathbf{V}$) we create the same representation by choosing the maximum in each line of U to determine the group of a person in the school,
+we naively chose R = 11 because we can see 11 groups on the scheme above, it give us this in the best case:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/naive_approach_r=11_t=18000.png}
+    \caption{estimation with R = 11, timestep = 18000$s$}
+\end{figure}
+
+As we can see, the group of teachers is not well approximate. It can be easily explained by the fact that they have way more 
+interactions with students over a day than with other professor. By checking the original database, interactions between two teachers 
+represents less than 7.5\% of the total numbers of interactions between a professor and someone else. 
+So teachers will finally be part of classes group and cant be detected by this model.\\
+
+\subsection{Impact of initial conditions}
+By doing this first factorization we noticed that, with these parameters, the approximation is not every time the same, 
+no matter the number of iteration we do. The model is sensitive to the initial $\mathbf{U}$, $\mathbf{V}$ and $\mathbf{W}$ that we
+choose randomly at the intialisation. We have mainly these 3 cases :
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{images/3cases_of_convergence.png}
+    \caption{3 differents estimations with R = 11, timestep = 18000$s$}
+\end{figure}
+
+In these 3 cases the value of L are nearly the same, we deduce from these estimations that the function L is not convexe, so the model can converge 
+towards different solutions depending of the initial $\mathbf{U}$, $\mathbf{V}$ and $\mathbf{W}$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Now that we have code the MU factorization, we can compare our results with the exact solution. 
 For that, we will use several $R$ for several interval of time $t_{k}$ and change the number of iteration and see what happened. \\
