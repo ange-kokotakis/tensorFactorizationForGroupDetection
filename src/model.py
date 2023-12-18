@@ -1,6 +1,6 @@
 import numpy as np
 from tqdm import tqdm
-from gen_contact_tensors import gen_contact_tensors
+from gentest import gen_contact_tensors
 
 class model:
     def __init__(self, path, R, timestep, l = 1, eps = 1e-15, showNormsHistory = True):
@@ -112,12 +112,15 @@ class model:
         self.normUV = np.linalg.norm(self.U - self.V)**2
 
     def HALS(self, nbIterations):
-        for k in tqdm(range(nbIterations)):
+        k = 0
+        while k <= nbIterations:
             for r in range(self.R):
+                if k > nbIterations:
+                    break
                 hU = self._KhatriRao(self.W, self.V) 
                 Yr = self._mode1Unfolding(self.Y) - self._calculS2D(self.U, hU, r)
                 self.U[:, r] = np.maximum((1/(self.l + np.linalg.norm(hU[:, r])**2)) *(self.l *self.V[:, r] + Yr @ hU[:, r]), 0)
-            
+
                 hV = self._KhatriRao(self.W, self.U)
                 Yr = self._mode2Unfolding(self.Y) - self._calculS2D(self.V, hV, r)
                 self.V[:, r] = np.maximum((1/(self.l + np.linalg.norm(hV[:, r])**2)) *(self.l *self.U[:, r] +Yr @ hV[:, r]), 0)
@@ -125,12 +128,12 @@ class model:
                 hW = self._KhatriRao(self.V, self.U)
                 Yr = self._mode3Unfolding(self.Y) - self._calculS2D(self.W, hW, r)
                 self.W[:, r] = np.maximum((1/(self.l + np.linalg.norm(hW[:, r])**2)) * Yr @ hW[:, r], 0)
-            
-            if self.showNormsHistory:
-                self.S = self._calculS()
-                self.listNorml0 = np.append(self.listNorml0, self._costFunction())
-                self.listNormUV = np.append(self.listNormUV, np.linalg.norm(self.U - self.V)**2)
 
+                k+=1
+                if self.showNormsHistory:
+                    self.S = self._calculS()
+                    self.listNorml0 = np.append(self.listNorml0, self._costFunction())
+                    self.listNormUV = np.append(self.listNormUV, np.linalg.norm(self.U - self.V)**2)
         self.S = self._calculS()
         self.norml0 = self._costFunction()
         self.normUV = np.linalg.norm(self.U - self.V)**2    
