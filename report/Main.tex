@@ -25,7 +25,7 @@
 \section{Introduction}
 
 Group detection can be very important in different cases. These identified groups serve as fundamental pillars for predictive modeling, providing insights into future behaviors, trends, and interactions.
-Indeed, from simple contacts, being able to detect a group and its dynamics is not so simple, certain groups can mix and others can remain alone. We must be able to separate a simple contact between two people from a group relationship.
+Indeed, from simple contacts, being able to detect a group and its dynamics is not so simple, certain groups can mix and others can remain isolated. We must be able to separate a simple contact between two people from a group relationship.
 For this, we will use two models: MU and HALS.
 We will compare them and see which is the most effective and durable.
 
@@ -121,7 +121,7 @@ moreover because U and V are representing the same thing we want these matrices 
 \]
 
 $L$ can be rewritten by using unfolded forms of $\mathbf{Y}$ i.e. by transforming it in a matrix with all the layers of $\mathbf{Y}$
-arranged in different ways and by using Khatri-Rao product $\odot$ :
+arranged in different ways, and by using Khatri-Rao product $\odot$ :
 
 \begin{align*}
 L(\mathbf{U}, \mathbf{V}, \mathbf{W}) &= \|\mathbf{Y}^{(1)}-\mathbf{U}(\mathbf{W}\odot \mathbf{V})^{T}\|_{F}^2 +\lambda \|\mathbf{U}-\mathbf{V}\|_{F}^2 \\
@@ -158,7 +158,7 @@ Then we update $\mathbf{U}, \mathbf{V}$ and $\mathbf{W}$ :
     &\mathbf{V}_{k} = \mathbf{V}_{k-1}\boxdot ([\nabla_{\mathbf{V}} L]^{+}\boxslash[\nabla_{\mathbf{V}} L]^{-}) \\
     &\mathbf{W}_{k} = \mathbf{W}_{k-1}\boxdot ([\nabla_{\mathbf{W}} L]^{+}\boxslash[\nabla_{\mathbf{W}} L]^{-})
 \end{align*}
-Where $\boxdot$ and $\boxslash$ are the Hadamard product and division respectively. To avoid division by zero, we replace all the zero coefficient by an epsilon strictly positive.
+Where $\boxdot$ and $\boxslash$ are the Hadamard product and division respectively. To avoid division by zero, we replace all the zero coefficient in $[.]^{+}$ by an epsilon strictly positive.
 
 
 
@@ -227,7 +227,7 @@ choose randomly at the intialisation. We have mainly 3 cases :
     \caption{3 differents estimations with R = 11, timestep = 18000$s$}
 \end{figure}
 
-In these 3 cases the value of L are nearly the same, we deduce from these estimations that the function L is not convexe, so the model can converge 
+In these 3 cases the value of L are nearly the same, we deduce from these estimations that the function L has different local minimum, so the model can converge 
 towards different solutions depending of the initial $\mathbf{U}$, $\mathbf{V}$ and $\mathbf{W}$.
 
 \subsection{impact of R}
@@ -257,7 +257,9 @@ With $R = 15$, we have nearly always the same result, which is a good thing : it
 Moreover we can see that despite the fact that $R = 15$, the model only created 12 groups and there is a group with only 1 member : the cyan one, and another with only
 2 members: the light purple one. So having a $R$ slightly above the real one is actually useful to have a better approximation.
 
-\subsection{impact of timestep}
+\subsection{Impact of timestep}
+We tested a lot of different timestep with different $R$ and their is no real impact on $\mathbf{U}$ and $\mathbf{V}$,
+the only thing we can say is that the more the timestep is little the more $\mathbf{W}$ will be precise.
 
 \subsection{Analysis of groups activity over time}
 
@@ -271,9 +273,9 @@ the color is close to yellow the more coefficient is close to 1.
     \caption{W with R = 10, timestep = 3600$s$}
 \end{figure}
 
-The experiment has been done on 2 days, we can easily see nigth because there is no activities on a long period.Then we can identify
-2 types of groups : friends groups and classes groups, indeed  most of the groups have less interactions during the launch break (line 4 and 28)
-and have many interactions during class, thes groups are classes groups. And the column 2 correspond to a group of friends who have
+The experiment has been done on 2 days, we can easily see night because there is no activities on a long period.Then we can identify
+2 types of groups : friends groups and classes groups, indeed most of the groups have less interactions during the launch break (line 4 and 28)
+and have many interactions during class, these groups are classes groups. And the column 2 correspond to a group of friends who have
 no interactions during class and a lot of interactions at launch.
 
 \section{Bibliographie}
