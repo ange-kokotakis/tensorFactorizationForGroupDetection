@@ -27,7 +27,7 @@
 In this project, we use datasets similar to Figure \ref{dataset} in which each line represents an interaction between
 two individuals: $id1$ and $id2$ at a certain $time$.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{images/tableau_données.png}
     \caption{dataset}
@@ -96,7 +96,7 @@ We define $\mathbf{S} \in \mathbb{R}_+^{I \times I \times K}$ as :
 
 The result of the product $\mathbf{U}_{i,r}\mathbf{V}_{j,r}\mathbf{W}_{k, r}$ is called the outer product noted $\mathbf{U}_r \circ \mathbf{V}_r \circ \mathbf{W}_r$ which can be seen as :
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/outer_product.png}
 \end{figure}
@@ -192,17 +192,17 @@ In this section we use a database composed of interaction between students and t
 metadata which indicate in which class students are. We represent it as the scheme below where two people in the same class have the same color, teachers ar in black,
 the distance between two individuals is randomly chosen and have no meaning in this representation :
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/original_class.png}
     \caption{original classes}
 \end{figure}
 
 \subsection{A first approximation}
-Using $\mathbf{U}$ (and $\mathbf{V}$) we create the same representation by choosing the maximum in each line of U to determine the group of a person in the school,
+Using $\mathbf{U}$ (or $\mathbf{V}$) we create the same representation by choosing the maximum in each line of U to determine the group of a person in the school,
 we naively chose R = 11 because we can see 11 groups on the scheme above, it give us this in the best case:
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/naive_approach_r=11_t=18000.png}
     \caption{estimation with R = 11, timestep = 18000$s$}
@@ -216,9 +216,9 @@ So teachers will finally be part of classes group and cant be detected by this m
 \subsection{Impact of initial conditions}
 By doing this first factorization we noticed that, with these parameters, the approximation is not every time the same, 
 no matter the number of iteration we do. The model is sensitive to the initial $\mathbf{U}$, $\mathbf{V}$ and $\mathbf{W}$ that we
-choose randomly at the intialisation. We have mainly these 3 cases :
+choose randomly at the intialisation. We have mainly 3 cases :
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/3cases_of_convergence.png}
     \caption{3 differents estimations with R = 11, timestep = 18000$s$}
@@ -227,109 +227,32 @@ choose randomly at the intialisation. We have mainly these 3 cases :
 In these 3 cases the value of L are nearly the same, we deduce from these estimations that the function L is not convexe, so the model can converge 
 towards different solutions depending of the initial $\mathbf{U}$, $\mathbf{V}$ and $\mathbf{W}$.
 
+\subsection{impact of R}
 
+We have seen above that we can realistically define 10 groups in this school, but what happened if we choose to reduce or increase this number ?
+Lets start wit $R = 5$ :\\
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Now that we have code the MU factorization, we can compare our results with the exact solution. 
-For that, we will use several $R$ for several interval of time $t_{k}$ and change the number of iteration and see what happened. \\
-
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/MU50_R10_t3600.png}
-    \caption{MU with $R$= 10, $t_{k}$= 3600 and $Nb_it$=50}
+    \includegraphics[width=1\textwidth]{images/R=5_t=18000.png}
+    \caption{estimations with R = 5, timestep = 18000$s$}
 \end{figure}
 
-\begin{figure}[h]
+With $R = 5$, we try to put a larger number of group in only 5 groups. We can see that the model try to regroup some of the original groups
+together. That's why we have lots of originals groups in the same color. We still have well separated groups it shows that
+the model is still efficient. We can see, globally, that all the people from each original group are together in one of the five biger groups.\\
+
+Now, lets see with $R = 15$ :
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/MU150_R10_t3600.png}
-    \caption{MU with $R$= 10, $t_{k}$= 3600 and $Nb_it$=150}
+    \includegraphics[width=0.5\textwidth]{images/R=15_t=18000.png}
+    \caption{estimations with R = 15, timestep = 18000$s$}
 \end{figure}
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/MU500_R10_t3600.png}
-    \caption{MU with $R$ = 10, $t_{k}$ = 3600 and $Nb_it$ =500}
-\end{figure}
-
-In this three first pictures, we can see the evolution of our model when we change the number of iteration.\\
-
-In the first one, with $Nb_it$=50, we have a lot of person in the wrong group. We can count that ten persons are in another group and there's a full group made of people from others group. This model is clearly not that good.\\
-
-It the second one, there's few people in the wrong group by still a group made by people from two other, and this time we can also see that there's two group in the same color, meaning that, in the model, the two groups are the same group. Finally, the result is better but we still have to improve this.\\
-
-The third one is really better. Almost everyone is in his group, except the same group that is made of 2 groups, but this time we can see that there's more people from the "purple one", meaning that the group belong to them and so we can conclude that the "pinks" and the "purples" have a lot of contact with each other.\\
-
-We can see that more the number of iteration is, more the result is close to the exact scheme. Showing the importance of this parameter.\\
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/MU500_R5_t3600.png}
-    \caption{MU with $R$= 5, $t_{k}$= 3600 and $Nb_it$=500}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/MU500_R10_t3600.png}
-    \caption{MU with $R$= 10, $t_{k}$= 3600 and $Nb_it$=500}
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/MU500_R15_t3600.png}
-    \caption{MU with $R$= 15, $t_{k}$= 3600 and $Nb_it$=500}
-\end{figure}
-
-In this three pictures, we will the how the parameter $R$ can change the result of our model.\\
-
-In the picture 5, we have $R=5$, which means that we try to put a larger number of group in only 5 groups. That's why we have lots of group in the same color. That's bad but the fact that we have five "well" separated show that the model if still efficient. We can see that all the people from each group are still together in one of the five "big" groups.\\
-
-In the picture 6, the result is way better. We can see ten distinct groups and almost everyone in his group. In fact, ten is the real number of group in this case. Which means ten is the minimal number for R where we can see all the group well separated.
-
-In the last picture, we still have ten separated groups but this time the separation is better. We have only three person in the wrong group over 242 persons. We can conclude on the efficiency of the model !\\
-
-Finally, we can see that's we have a minimum for R, which is the real number of group but passed this number, we can grown it however we want and it will always increase the model.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/MU500_R10_t900.png}
-    \caption{MU with $R$= 10, $t_{k}$= 900 and $Nb_it$=500}
-
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/MU500_R10_t3600.png}
-    \caption{MU with $R$= 10, $t_{k}$= 3600 and $Nb_it$=500}
-
-\end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{images/MU500_R10_t18000.png}
-    \caption{MU with $R$= 10, $t_{k}$= 18000 and $Nb_it$=500}
-
-\end{figure}
-
-Now, we have change the interval of time $t_{k}$.\\
+With $R = 15$, we have nearly always the same result, which is a good thing it reduces the uncertainty caused by the initial conditions,
+moreover we can see that despie the fact that $R = 15$, the model only created 12 groups and there is a group with only 1 member : the cyan one, and another with only
+2 members: the light purple one. So having a $R$ slightly above the real one is actually useful to have a better approximation.
 
 
     
