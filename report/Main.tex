@@ -24,6 +24,13 @@
 
 \section{Introduction}
 
+Group detection can be very important in different cases. These identified groups serve as fundamental pillars for predictive modeling, providing insights into future behaviors, trends, and interactions.
+Indeed, from simple contacts, being able to detect a group and its dynamics is not so simple, certain groups can mix and others can remain alone. We must be able to separate a simple contact between two people from a group relationship.
+For this, we will use two models: MU and HALS.
+We will compare them and see which is the most effective and durable.
+
+\section{Model}
+
 In this project, we use datasets similar to Figure \ref{dataset} in which each line represents an interaction between
 two individuals: $id1$ and $id2$ at a certain $time$.
 
@@ -55,8 +62,6 @@ where K is the number of intervals of time. Finally the tensor containing the da
         0 & \text{otherwise}
     \end{cases}
 \]
-
-\section{Model}
 
 In order to approximate this tensor we create 3 matrices :
 \[
@@ -176,15 +181,13 @@ At each iteration we update $\mathbf{U}_{r'}$, $\mathbf{V}_{r'}$, $\mathbf{W}_{r
 
 \section{Comparison of MU and HALS convergence}
 
-We note that HALS converge fa   ster than MU.
+We note that MU converge faster than HALS.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/comparison_HALS_MU.png}
     \caption{comparison between MU and HALS convergence}
 \end{figure}
-
-
 
 \section{Interpretation of our results}
 
@@ -250,13 +253,61 @@ Now, lets see with $R = 15$ :
     \caption{estimations with R = 15, timestep = 18000$s$}
 \end{figure}
 
-With $R = 15$, we have nearly always the same result, which is a good thing it reduces the uncertainty caused by the initial conditions,
-moreover we can see that despie the fact that $R = 15$, the model only created 12 groups and there is a group with only 1 member : the cyan one, and another with only
+With $R = 15$, we have nearly always the same result, which is a good thing : it reduces the uncertainty caused by the initial conditions.
+Moreover we can see that despite the fact that $R = 15$, the model only created 12 groups and there is a group with only 1 member : the cyan one, and another with only
 2 members: the light purple one. So having a $R$ slightly above the real one is actually useful to have a better approximation.
 
+\subsection{impact of timestep}
 
+\subsection{Analysis of groups activity over time}
+
+Using W we can interpret when groups has been active over time. Lets start with a timestep equals to 3600 which is equivalent to one hour,
+W will be represented as a scheme where coefficient are colors, the more the color is close to purple the more coefficient is close to 0, the more
+the color is close to yellow the more coefficient is close to 1.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/W_R=10_t=3600.png}
+    \caption{W with R = 10, timestep = 3600$s$}
+\end{figure}
+
+The experiment has been done on 2 days, we can easily see nigth because there is no activities on a long period.Then we can identify
+2 types of groups : friends groups and classes groups, indeed  most of the groups have less interactions during the launch break (line 4 and 28)
+and have many interactions during class, thes groups are classes groups. And the column 2 correspond to a group of friends who have
+no interactions during class and a lot of interactions at launch.
+
+\section{Bibliographie}
+\begin{enumerate}
+    \item \textbf{\textit{Fast Local Algorithms for Large Scale Nonnegative Matrix and Tensor Factorizations}} \\
+    \textit{Researchgate}
     
-
+    \item \textbf{\textit{Detecting the Community Structure and Activity Patterns of Temporal Networks: A Non-Negative Tensor Factorization Approach}} \\
+    Laetitia Gauvin, André Panisson, Ciro Cattuto
+    
+    \item \textbf{\textit{Contact Patterns among High School Students}} \\
+    Julie Fournet, Alain Barrat
+    
+    \item \textbf{\textit{The Why and How of Nonnegative Matrix Factorization}} \\
+    Nicolas Gillis
+    
+    \item \textbf{\textit{Learning the Parts of Objects by Non-Negative Matrix Factorization}} \\
+    Daniel D. Lee, H. Sébastien Seung
+    
+    \item \textbf{\textit{Tensor Decompositions and Applications}} \\
+    Tamara G. Kolda, Brett W. Bader
+    
+    \item \textbf{\textit{High-Resolution Measurements of Face-to-Face Contact Patterns in a Primary School}} \\
+    Juliette Stehlé, Nicolas Voirin, Alain Barrat, Ciro Cattuto, \\
+    Lorenzo Isella, Jean-François Pinton, Marco Quaggiotto, \\
+    Wouter Van den Broeck, Corinne Régis, Bruno Lina, \\
+    Philippi Vanhems
+    
+    \item \textbf{\textit{Advanced Data Mining}} \\
+    Rodrigo Cabral
+    
+    \item \textbf{\textit{The Matrix Cookbook}} \\
+    Kaare Brandt Petersen, Michael Syskind Pedersen
+\end{enumerate}
 
 \end{document}
 %mettre en gras les matrices en gras voir mathbf

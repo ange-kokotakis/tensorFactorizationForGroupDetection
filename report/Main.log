@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.26)  18 DEC 2023 15:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.26)  18 DEC 2023 17:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -379,86 +379,91 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <images/tableau_données.png, id=1, 154.77824pt x 244.5135pt>
 File: images/tableau_données.png Graphic file (type png)
 <use images/tableau_données.png>
-Package pdftex.def Info: images/tableau_données.png  used on input line 32.
+Package pdftex.def Info: images/tableau_données.png  used on input line 39.
 (pdftex.def)             Requested size: 140.92793pt x 222.6494pt.
  [1
 
 {c:/Users/Ange/AppData/Local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/tableau_données.png>]
-<images/outer_product.png, id=21, 876.876pt x 422.7795pt>
+<images/outer_product.png, id=16, 876.876pt x 422.7795pt>
 File: images/outer_product.png Graphic file (type png)
 <use images/outer_product.png>
-Package pdftex.def Info: images/outer_product.png  used on input line 101.
+Package pdftex.def Info: images/outer_product.png  used on input line 106.
 (pdftex.def)             Requested size: 234.8775pt x 113.24239pt.
  [2 <./images/outer_product.png>]
-Overfull \hbox (50.77092pt too wide) detected at line 170
+Overfull \hbox (50.77092pt too wide) detected at line 175
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--174
+Underfull \hbox (badness 10000) in paragraph at lines 177--179
 
  []
 
-<images/comparison_HALS_MU.png, id=28, 427.5975pt x 311.36325pt>
+<images/comparison_HALS_MU.png, id=28, 436.63126pt x 320.397pt>
 File: images/comparison_HALS_MU.png Graphic file (type png)
 <use images/comparison_HALS_MU.png>
-Package pdftex.def Info: images/comparison_HALS_MU.png  used on input line 183.
-(pdftex.def)             Requested size: 234.8775pt x 171.02701pt.
+Package pdftex.def Info: images/comparison_HALS_MU.png  used on input line 188.
+(pdftex.def)             Requested size: 234.8775pt x 172.35179pt.
 [3]
 <images/original_class.png, id=38, 416.757pt x 302.93175pt>
 File: images/original_class.png Graphic file (type png)
 <use images/original_class.png>
-Package pdftex.def Info: images/original_class.png  used on input line 197.
+Package pdftex.def Info: images/original_class.png  used on input line 200.
 (pdftex.def)             Requested size: 234.8775pt x 170.72687pt.
 <images/naive_approach_r=11_t=18000.png, id=39, 417.35925pt x 305.34074pt>
 File: images/naive_approach_r=11_t=18000.png Graphic file (type png)
 <use images/naive_approach_r=11_t=18000.png>
-Package pdftex.def Info: images/naive_approach_r=11_t=18000.png  used on input line 207.
+Package pdftex.def Info: images/naive_approach_r=11_t=18000.png  used on input line 210.
 (pdftex.def)             Requested size: 234.8775pt x 171.84227pt.
  [4 <./images/comparison_HALS_MU.png> <./images/original_class.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 211--215
+Underfull \hbox (badness 10000) in paragraph at lines 214--218
 
  []
 
 <images/3cases_of_convergence.png, id=45, 1062.97125pt x 250.536pt>
 File: images/3cases_of_convergence.png Graphic file (type png)
 <use images/3cases_of_convergence.png>
-Package pdftex.def Info: images/3cases_of_convergence.png  used on input line 223.
+Package pdftex.def Info: images/3cases_of_convergence.png  used on input line 226.
 (pdftex.def)             Requested size: 469.75502pt x 110.72166pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--234
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
 
  []
 
 <images/R=5_t=18000.png, id=46, 1156.32pt x 277.63725pt>
 File: images/R=5_t=18000.png Graphic file (type png)
 <use images/R=5_t=18000.png>
-Package pdftex.def Info: images/R=5_t=18000.png  used on input line 237.
+Package pdftex.def Info: images/R=5_t=18000.png  used on input line 240.
 (pdftex.def)             Requested size: 469.75502pt x 112.78984pt.
 [5 <./images/naive_approach_r=11_t=18000.png> <./images/3cases_of_convergence.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 241--244
+Underfull \hbox (badness 10000) in paragraph at lines 244--247
 
  []
 
 <images/R=15_t=18000.png, id=52, 419.166pt x 302.3295pt>
 File: images/R=15_t=18000.png Graphic file (type png)
 <use images/R=15_t=18000.png>
-Package pdftex.def Info: images/R=15_t=18000.png  used on input line 249.
+Package pdftex.def Info: images/R=15_t=18000.png  used on input line 252.
 (pdftex.def)             Requested size: 234.8775pt x 169.40945pt.
-[6 <./images/R=5_t=18000.png> <./images/R=15_t=18000.png>] (./Main.aux) ) 
+<images/W_R=10_t=3600.png, id=53, 116.23425pt x 301.125pt>
+File: images/W_R=10_t=3600.png Graphic file (type png)
+<use images/W_R=10_t=3600.png>
+Package pdftex.def Info: images/W_R=10_t=3600.png  used on input line 270.
+(pdftex.def)             Requested size: 93.94957pt x 243.40448pt.
+[6 <./images/R=5_t=18000.png> <./images/R=15_t=18000.png>] [7 <./images/W_R=10_t=3600.png>] [8] (./Main.aux) ) 
 Here is how much of TeX's memory you used:
- 5172 strings out of 476001
- 76257 string characters out of 5780722
- 1868068 words of memory out of 5000000
- 25590 multiletter control sequences out of 15000+600000
- 527655 words of font info for 85 fonts, out of 8000000 for 9000
+ 5185 strings out of 476001
+ 76510 string characters out of 5780722
+ 1869068 words of memory out of 5000000
+ 25600 multiletter control sequences out of 15000+600000
+ 528360 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,13n,62p,390b,261s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha5.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Main.pdf (6 pages, 759181 bytes).
+<c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha5.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathb10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb><c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Main.pdf (8 pages, 803348 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 160 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

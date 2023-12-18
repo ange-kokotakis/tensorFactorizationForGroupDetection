@@ -356,11 +356,19 @@ INPUT ./images/R=15_t=18000.png
 INPUT images/R=15_t=18000.png
 INPUT ./images/R=15_t=18000.png
 INPUT ./images/R=15_t=18000.png
+INPUT ./images/W_R=10_t=3600.png
+INPUT ./images/W_R=10_t=3600.png
+INPUT images/W_R=10_t=3600.png
+INPUT ./images/W_R=10_t=3600.png
+INPUT ./images/W_R=10_t=3600.png
+INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT Main.aux
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb
+INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
@@ -371,6 +379,7 @@ INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/ams
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha5.pfb
 INPUT c:/Users/Ange/AppData/Local/texlive/2023/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb
